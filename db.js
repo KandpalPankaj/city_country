@@ -1,5 +1,6 @@
-const items = require("./src/db.json");
-
+const addcountry = require("./src/country.json");
+const addcity = require("./src/city.json");
 module.exports = {
-  items,
+    addcountry,
+    addcity
 };
