@@ -13,7 +13,7 @@ export const AddCity = () => {
   const [n, setN] = useState("");
   const [details,setDetails] = useState({})
   const getList = () => {
-    axios.get("http://localhost:8080/countries").then(function (response) {
+    axios.get("https://city-country1.herokuapp.com/add-country").then(function (response) {
       setData(response.data);
     });
   };
@@ -29,7 +29,7 @@ export const AddCity = () => {
     ))
   };
   const handleClick = ()=>{
-    axios.post('http://localhost:8080/city', details)
+    axios.post('https://city-country1.herokuapp.com/add-city', details)
     .then(function (response) {
         alert("City added sucessfully")
       })

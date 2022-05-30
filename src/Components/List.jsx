@@ -25,7 +25,7 @@ export const List = () => {
   const [CopyData, setCopydata] = useState([]);
   const [sorting, setSort] = useState("");
   const getList = () => {
-    axios.get("http://localhost:8080/city").then(function (response) {
+    axios.get("https://city-country1.herokuapp.com/add-city").then(function (response) {
       setData(response.data);
       setCopydata(response.data);
     });
@@ -127,9 +127,9 @@ export const List = () => {
                 </TableCell>
                 <TableCell>
                   <Button variant="outlined" startIcon={<DeleteIcon />} onClick={()=>(
-                    
-                    axios.delete(`http://localhost:8080/city/${e.id}`).then(
-                      getList()
+                    axios.delete(`https://city-country1.herokuapp.com/add-city/${e.id}`).then(
+                      getList
+                  
                     )
                   )}>
                     DELETE

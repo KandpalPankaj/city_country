@@ -7,7 +7,7 @@ export const AddCountry = () => {
   const [text, setText] = useState("");
 
   const handleClick = () => {
-    axios.get("http://localhost:8080/countries").then(function (response) {
+    axios.get("https://city-country1.herokuapp.com/add-country").then(function (response) {
       // handle success
       let condition = true;
       let res = response.data.map((e) => {
@@ -19,9 +19,9 @@ export const AddCountry = () => {
       });
       if (condition) {
         axios
-          .post("http://localhost:8080/countries", { name: text })
+          .post("https://city-country1.herokuapp.com/add-country", { name: text })
           .then(function (response) {
-            console.log(response);
+            alert("Country added sucessfully")
           });
       }
     });
